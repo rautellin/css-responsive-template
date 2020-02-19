@@ -1,8 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
 *{
   box-sizing: border-box;
   margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body{
@@ -56,6 +57,11 @@ body{
 .large-heading{
   font-size: 6rem;
   margin-top: 20vh;
+  padding: 0;
+}
+
+.small-heading {
+  font-size: 1rem;
 }
 
 a {
@@ -105,4 +111,85 @@ body::before{
   height: 100%;
   z-index: -1;
   background: rgba(88, 72, 175, 0.9);
+}
+
+/* MENU OVERLAY */
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.menu-branding, .menu-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* LEFT MENU */
+/* Slide in from top */
+.menu-nav{
+  padding: 0;
+  background: rgb(72, 48, 206, 0.9);
+  list-style: none;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.5s ease-out;
+}
+
+.menu .show{
+  transform: translate3d(0, 0, 0);
+}
+
+/* RIGHT MENU */
+/* Slide in from bottom */
+.menu-branding {
+  background: rgb(72, 48, 206, 0.9);
+  transform: translate3d(0, 100%, 0);
+  transition: all 0.5s ease-out;
+}
+
+.menu-branding .show{
+  transform: translate3d(0, 0, 0);
+}
+
+.portrait {
+  width: 250px;
+  height: 250px;
+  background: url("../Images/portrait.jpeg");
+  background-size: cover;
+  border-radius: 50%;
+  border: solid 3px white;
+}
+
+/* NAV ITEMS */
+
+.nav-link {
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+.nav-link:hover{
+  color: yellow;
+}
+
+.current > a {
+  color: yellow;
 }
