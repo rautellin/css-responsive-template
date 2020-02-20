@@ -96,13 +96,13 @@ main {
 
 /* BACKGROUND */
 
-body{
+#background{
   background: url(/Images/background.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
 
-body::before{
+#background::before{
   content: "";
   position: absolute;
   top: 0;
@@ -195,6 +195,64 @@ body::before{
 }
 
 
+/* ABOUT */
+
+.about {
+  min-height: calc(100vh - 60px);
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 
+  "bioimage bio bio"
+  "item1 item2 item3";
+  grid-template-columns: repeat(3,1fr);
+}
+
+.bio-image{
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  border: white 3px solid;
+  width: 150px;
+  height: 150px;
+}
+
+.bio {
+  grid-area: bio;
+  font-size: 1.5rem;
+}
+
+.item {
+  background: rgb(72, 48, 206, 0.9);
+  padding: 0.5rem;
+  border-bottom: yellow 5px solid;
+}
+
+.item-1{
+  grid-area: item1;
+}
+
+.item-2{
+  grid-area: item2;
+}
+
+.item-3{
+  grid-area: item3;
+}
+
+/* FOOTER */
+
+footer{
+  text-align: center;
+  padding: 1rem;
+  background: grey;
+  color: yellow;
+  height: 60px;
+}
+
+
 /* MEDIA QUERY */
 
 @media screen and (max-width: 500px){
@@ -238,5 +296,17 @@ body::before{
   .portrait {
     width: 150px;
     height: 150px;
+  }
+
+  .about-info {
+    grid-template-areas: 
+    "bioimage"
+    "bio"
+    "item1"
+    "item2"
+    "item3"
+    ;
+    grid-template-columns: 1fr;
+
   }
 }
